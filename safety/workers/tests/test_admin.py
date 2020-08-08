@@ -4,6 +4,7 @@ from django.contrib import admin
 from ..models import Worker
 from ..admin import WorkerAdmin
 
+
 class WorkerAdminTest(TestCase):
     def test_admin_should_be_refistered(self):
         self.assertTrue(isinstance(admin.site._registry[Worker], WorkerAdmin))
