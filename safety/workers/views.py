@@ -5,11 +5,13 @@ import json
 # from django.http import HttpResponse
 
 from rest_framework.response import Response
-from rest_framework import serializers
+
 from rest_framework.views import APIView
 from rest_framework import  viewsets
 
 from .models import Worker
+from .serializers import WorkerSerializer
+
 # class-based view
 # class WorkerListView(View):
 #     def get(self, request):
@@ -41,13 +43,7 @@ from .models import Worker
         #     json.dumps(worker_list),
         #     content_type='application/json'
 #         # )
-class WorkerSerializer(serializers.Serializer):
-    first_name = serializers.CharField(max_length=30)
-    last_name = serializers.CharField(max_length=40)
-    is_availble = serializers.BooleanField()
-    primary_phone = serializers.CharField(max_length=10)
-    secondary_phone = serializers.CharField(max_length=10)
-    address = serializers.CharField()
+
 
 class WorkerListView(APIView):
     def get(self, request):
