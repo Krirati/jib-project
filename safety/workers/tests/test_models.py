@@ -30,6 +30,10 @@ class TestWorker(TestCase):
         )
         
         # Then 
+
+        assert worker.first_name == first_name
+        assert worker.is_availble is True
+
         self.assertEqual(worker.first_name, first_name)
         self.assertEqual(worker.last_name, last_name)
         self.assertEqual(worker.image_profile.name, image_mock.name)
