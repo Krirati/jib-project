@@ -43,7 +43,7 @@ from .serializers import WorkerSerializer
         #     json.dumps(worker_list),
         #     content_type='application/json'
 #         # )
-
+# from rest_framework
 
 class WorkerListView(APIView):
     def get(self, request):
