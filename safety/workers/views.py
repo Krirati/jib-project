@@ -40,7 +40,7 @@ from .models import Worker
         # return HttpResponse(
         #     json.dumps(worker_list),
         #     content_type='application/json'
-        # )
+#         # )
 class WorkerSerializer(serializers.Serializer):
     first_name = serializers.CharField(max_length=30)
     last_name = serializers.CharField(max_length=40)
@@ -55,6 +55,6 @@ class WorkerListView(APIView):
         serializer = WorkerSerializer(workers, many=True)
         return Response(serializer.data)
 
-class WorkerModelViewSetView(viewsets.ModelViewSet):
-    queryset = Worker.objects.all()
-    serializer_class = WorkerSerializer
+# class WorkerModelViewSetView(viewsets.ModelViewSet):
+#     queryset = Worker.objects.all()
+#     serializer_class = WorkerSerializer
