@@ -1,6 +1,5 @@
 import unittest
 from unittest.mock import patch
-# import getrandom
 from getrandom import get_random_plus_one
 
 class TestRandom(unittest.TestCase):
